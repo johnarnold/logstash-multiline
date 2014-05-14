@@ -13,11 +13,18 @@ I re-wrote the multiline filter to implement a Least Recently Used cache, based 
 Configure your shipper.conf like:
 
   multiline {
+  
     pattern => "."
+    
     negate => false
+    
     what => "streamcache"
+    
     stream_identity => "%{field1}.%{field2}"
+    
     cache_ttl => 2
+    
     cache_size => 50000
+    
   }
 
